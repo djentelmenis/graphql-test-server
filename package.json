@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npm-run-all --parallel dev:server json:server",
     "dev:server": "nodemon server.js",
-    "json:server": "json-server --watch data.json --port 3004"
+    "json:server": "json-server --watch data.json --port 3000"
   },
   "author": "kp",
   "license": "MIT",

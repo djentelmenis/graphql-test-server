@@ -1,12 +1,24 @@
 # Simple GraphQL test server
 
-To run locally run
+## To run locally run
 
 ```bash
 $ npm i && npm start
 ```
 
-Some GraphQL queries to test
+JSON-server running at
+
+```bash
+http://localhost:3000/
+```
+
+GraphiQL running at
+
+```bash
+http://localhost:4000/graphql
+```
+
+## Some GraphQL queries to test
 
 ```graphql
 {
