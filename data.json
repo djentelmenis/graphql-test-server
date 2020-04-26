@@ -1,34 +1,61 @@
 {
-  "customers": [
+  "employees": [
     {
       "id": "1",
       "name": "John Doe",
       "email": "jdoe@gmail.com",
-      "age": 35
+      "phone": "222456987",
+      "age": 35,
+      "company": "2"
     },
     {
       "id": "2",
-      "name": "New Name",
+      "name": "Steve Smith",
       "email": "steve@gmail.com",
-      "age": 50
+      "phone": "222654987",
+      "age": 40,
+      "company": "1"
     },
     {
       "id": "3",
       "name": "Sara Williams",
       "email": "sara@gmail.com",
-      "age": 32
+      "phone": "222123456",
+      "age": 32,
+      "company": "2"
     },
     {
       "id": "4",
       "name": "Keith Williams",
       "email": "keith@gmail.com",
-      "age": 33
+      "phone": "222321654",
+      "age": 33,
+      "company": "3"
     },
     {
       "id": "5",
       "name": "Tom Jones",
       "email": "tom@gmail.com",
-      "age": 32
+      "phone": "222794567",
+      "age": 32,
+      "company": "1"
+    }
+  ],
+  "companies": [
+    {
+      "id": "1",
+      "name": "Microsoft",
+      "description": "Microsoft Corporation is an American multinational technology company with headquarters in Redmond, Washington"
+    },
+    {
+      "id": "2",
+      "name": "Apple Inc.",
+      "description": "Apple Inc. is an American multinational technology company headquartered in Cupertino, California"
+    },
+    {
+      "id": "3",
+      "name": "IBM",
+      "description": "International Business Machines Corporation (IBM) is an American multinational technology company headquartered in Armonk, New York"
     }
   ]
 }
