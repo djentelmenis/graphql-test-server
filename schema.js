@@ -37,21 +37,10 @@ const EmployeeType = new GraphQLObjectType({
   }),
 });
 
-// Root Query
-const RootQuery = new GraphQLObjectType({
-  name: 'RootQueryType',
+// Queries
+const query = new GraphQLObjectType({
+  name: 'Queries',
   fields: {
-    employee: {
-      type: EmployeeType,
-      args: {
-        id: { type: GraphQLString },
-      },
-      async resolve(parentValue, args) {
-        const employee = await getEmployee(args);
-        const companies = await getCompanies();
-        return { ...employee, company: companies.find((company) => company.id === employee.company) };
-      },
-    },
     employees: {
       type: new GraphQLList(EmployeeType),
       async resolve() {
@@ -63,6 +52,23 @@ const RootQuery = new GraphQLObjectType({
         }));
       },
     },
+    employee: {
+      type: EmployeeType,
+      args: {
+        id: { type: GraphQLString },
+      },
+      async resolve(parentValue, args) {
+        const employee = await getEmployee(args);
+        const companies = await getCompanies();
+        return { ...employee, company: companies.find((company) => company.id === employee.company) };
+      },
+    },
+    companies: {
+      type: new GraphQLList(CompanyType),
+      resolve() {
+        return getCompanies();
+      },
+    },
     company: {
       type: CompanyType,
       args: {
@@ -72,18 +78,12 @@ const RootQuery = new GraphQLObjectType({
         return getCompany(args);
       },
     },
-    companies: {
-      type: new GraphQLList(CompanyType),
-      resolve() {
-        return getCompanies();
-      },
-    },
   },
 });
 
 // Mutations
 const mutation = new GraphQLObjectType({
-  name: 'Mutation',
+  name: 'Mutations',
   fields: {
     addEmployee: {
       type: EmployeeType,
@@ -127,6 +127,6 @@ const mutation = new GraphQLObjectType({
 });
 
 module.exports = new GraphQLSchema({
-  query: RootQuery,
+  query,
   mutation,
 });
